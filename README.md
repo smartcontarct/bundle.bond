@@ -1,5 +1,8 @@
 # bundle.bund
 Create an online reservation that makes possible to reserve a team/person time NFT on blockchain.
+There are lists of teams/persons on a market where customers can purchase NFTs posted by the Team/person.
+ 
+The online reservation is managed by a group of administrators. Admins allow teams/persons to add time NFT to the reservation system. teams/persons can manage their account info and time NFTs. customers can visit teams/persons NFTs and purchase NFTs using cryptocurrency. 
 
 ## Story
 Check out User Stories.
