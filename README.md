@@ -1,6 +1,9 @@
 # bundle.bund
+Create an online reservation that makes possible to reserve a team/person time NFT on blockchain.
 
 ## Story
+Check out User Story.
+https://github.com/smartcontarct/bundle.bond/blob/master/user_stories.md
 
 ## Instructions
 
