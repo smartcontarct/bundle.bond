@@ -77,6 +77,13 @@ They can edit their own account that will be displayed on the Team/Person dashbo
 ### Try It Out (Edit Account)
 With a `Team/Person` account, on the homepage, you will see a `Edit My Account` section. There, you can enter account info, and after clicking `Save Changes`, it will be created. After the transaction has confirmed, refresh the page to see the new Account Info, along with its `name`,`logo` and `description` under `Your Account Info. To manage the Account Info, simply click on a Edit My Account. 
 
+### Story (Add New Completed project)
+They can add their own projects that will be displayed on the Team/Person dashboard. They can also see the their own project list that they have already added. 
+
+### Try It Out (Add New Completed project)
+With a `Team/Person` account, on the homepage, you will see a `Add Project to Resume` section. There, you can enter project info (smart contract address), and after clicking `Add a Project`, it will be created. After the transaction has confirmed, refresh the page to see the new Resume Info, along with its `name`,`address` and `description` under `Your Resume. To manage the Project, simply click on a Edit My Project. 
+Then `Project Added` Event will be trigger. after that chain link function will be called to set star for project.
+
 
 ### Story (add/remove)
 They can add/remove NFTs to the online reservation system. 
@@ -125,5 +132,9 @@ Offer status should change to Accepted.
 Refund suggested price to account that send this offer. NFT's balance will be update.
 status should change to Rejected.
 
+### Story (Mark Project As Done)
+Customer can see list of their NFTs, including their status (Pending/Done). Which make NFT to team/person available to withdraw.
 
+### Try It Out (Mark Project As Done)
+To mark NFT as Complete
 
