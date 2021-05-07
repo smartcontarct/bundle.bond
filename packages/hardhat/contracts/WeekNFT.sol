@@ -7,13 +7,24 @@ contract WeekNFT is ERC721Token {
     constructor(string _name, string _symbol)
         public
         ERC721Token(_name, _symbol)
-    {}
+    {
+        totalWeeks = 0;
+    }
+
+    uint256 public totalWeeks;
+
+    mapping(uint256 => Week) private _weekById;
+
+    mapping(uint256 => mapping(address => Bid)) BidList;
 
     /// wrapper on minting new 721
     function mint721(
         address _teamContract,
         uint256 _teamTokenId,
-        address userAddress
+        address userAddress,
+        string metadata,
+        uint256 _WeekNo,
+        uint256 _Year
     ) public returns (uint256) {
         _mint(userAddress, allTokens.length + 1);
         assignNFTToTeam(
@@ -22,7 +33,51 @@ contract WeekNFT is ERC721Token {
             allTokens.length,
             userAddress
         );
+        _createWeek(
+            allTokens.length,
+            metadata,
+            _teamTokenId,
+            _teamContract,
+            _WeekNo,
+            _Year
+        );
         return allTokens.length;
+    }
+
+    function placeBid(
+        uint256 weekTokenId,
+        address bidder,
+        uint256 price
+    ) public {
+        BidList[weekTokenId][bidder] = Bid({
+            weekId: weekTokenId,
+            price: price,
+            Bidder: bidder
+        });
+    }
+
+    function _createWeek(
+        uint256 _id,
+        string memory _WeekUrl,
+        uint256 _teamTokenId,
+        address _teamContract,
+        uint256 _WeekNo,
+        uint256 _Year
+    ) public returns (uint256) {
+        totalWeeks++;
+
+        Week memory _Week = Week({
+            id: _id,
+            teamId: _teamTokenId,
+            weekOwner: _teamContract,
+            WeekUrl: _WeekUrl,
+            exists: true,
+            price: 0,
+            WeekNo: _WeekNo,
+            Year: _Year
+        });
+        _weekById[_id] = _Week;
+        return _Week.id;
     }
 
     function assignNFTToTeam(
@@ -44,13 +99,28 @@ contract WeekNFT is ERC721Token {
         );
     }
 
+    function transferWeekNFTOnBid(
+        uint256 weekTokenId,
+        address from,
+        address to
+    ) {
+        safeTransferFrom(from, to, weekTokenId);
+    }
+
     struct Week {
         uint256 id;
-
         uint256 teamId;
+        address weekOwner;
         bool exists;
+        string WeekUrl;
         uint256 price;
-        uint256 startDate;
-        uint256 endDate;
+        uint256 WeekNo;
+        uint256 Year;
+    }
+
+    struct Bid {
+        uint256 weekId;
+        uint256 price;
+        address Bidder;
     }
 }
