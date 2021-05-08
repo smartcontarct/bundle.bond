@@ -98,5 +98,14 @@ export const NETWORKS = {
         rpcUrl: "https://rpc-mumbai.maticvigil.com",
         faucet: "https://faucet.matic.network/",
         blockExplorer: "https://mumbai-explorer.matic.today/",
+    },
+    remote_arbitrum: {
+        name: "remote_arbitrum",
+        color: '#92D9FA',
+        chainId: 212984383488152,
+        price: 1,
+        gasPrice:1000000000,
+        rpcUrl: "https://kovan4.arbitrum.io/rpc",
+        blockExplorer: "https://explorer.offchainlabs.com/#/",
     }
 }

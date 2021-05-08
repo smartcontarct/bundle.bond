@@ -2,7 +2,7 @@ pragma solidity ^0.4.21;
 
 import "zeppelin-solidity/contracts/access/rbac/RBAC.sol";
 
-interface TeamNFT {
+interface ITeamNFT {
     function _createTeam(
         uint256 _id,
         string memory _TeamUrl,
@@ -39,7 +39,7 @@ interface TeamNFT {
         );
 }
 
-interface WeekNFT {
+interface IWeekNFT {
     /// wrapper on minting new 721
     function mint721(
         address _teamContract,
@@ -66,9 +66,9 @@ interface WeekNFT {
     );
 }
 
-contract BundleBund is RBAC {
-    TeamNFT TEAM;
-    WeekNFT WEEK;
+contract BundleBond is RBAC {
+    ITeamNFT TEAM;
+    IWeekNFT WEEK;
     address TeamContractAddress;
     address weekContractAddress;
     mapping(address => Customer) customerList;
@@ -77,8 +77,8 @@ contract BundleBund is RBAC {
     uint256 lastProjectId;
 
     constructor(address _team, address _week) public {
-        TEAM = TeamNFT(_team);
-        WEEK = WeekNFT(_week);
+        TEAM = ITeamNFT(_team);
+        WEEK = IWeekNFT(_week);
         TeamContractAddress = _team;
         weekContractAddress = _team;
         lastProjectId = 0;
@@ -105,7 +105,7 @@ contract BundleBund is RBAC {
         }
     }
 
-    function addTeamOwner(string _teamOwnerName, address _teamOwnerAddress) {
+    function addTeamOwner(string _teamOwnerName, address _teamOwnerAddress) public{
         TeamOwner storage t = TeamOwnerList[_teamOwnerAddress];
         if (!t.exists) {
             TeamOwnerList[_teamOwnerAddress] = TeamOwner({

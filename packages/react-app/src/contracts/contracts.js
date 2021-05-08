@@ -1,1 +1,1 @@
-module.exports = ["BundleBund","TeamNFT","WeekNFT","YourContract"];
+module.exports = ["BundleBond","TeamNFT","WeekNFT","YourContract"];
