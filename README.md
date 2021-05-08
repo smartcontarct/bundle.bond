@@ -1,6 +1,6 @@
-# bundle.bund
-Create an online reservation that makes possible to reserve a team/person time NFT on blockchain.
-There are lists of teams/persons on a market where customers can purchase NFTs posted by the Team/person.
+# bundle.bond
+Create an online reservation that makes possible to reserve a team/time NFT on blockchain.
+There are lists of teams on a market where customers can purchase NFTs posted by the Team.
  
 The online reservation is managed by a group of administrators. Admins allow teams/persons to add time NFT to the reservation system. teams/persons can manage their account info and time NFTs. customers can visit teams/persons NFTs and purchase NFTs using cryptocurrency. 
 
@@ -24,7 +24,9 @@ cd bundle.bund
 yarn install
 
 ```
+### mnemonic 
 
+create a mnemonic.txt file with your secret words and put it in the bundle.bond\packages\hardhat\ path
 ```bash
 
 yarn start
@@ -39,6 +41,4 @@ yarn deploy
 
 ```
 
-### mnemonic 
 
-create a mnemonic.txt file with your secret words and put it in the bundle.bund\packages\hardhat\ path
