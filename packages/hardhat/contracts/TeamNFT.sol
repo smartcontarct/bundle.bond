@@ -46,7 +46,7 @@ contract TeamNFT is ComposableTopDown {
         address teamOwner,
         string name,
         string metadata //isTeamOwner(teamOwner)
-    ) public returns (uint256) {
+    ) public returns (uint256 _teamId) {
         uint256 teamId = mint(teamOwner, metadata);
         _createTeam(teamId, metadata, name, teamOwner);
         return teamId;
