@@ -18,6 +18,7 @@ import web3 from '../utils/web3';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
+import WeekPicker from './WeekPicker'
 
 
 
@@ -270,9 +271,10 @@ class TeamOwnerPage extends Component {
                         </Card>
                     </Col>
                     <Col xs={8}>
-                        <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
+                        <WeekPicker/>
+                        {/* <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
                             {WeekNFTs}
-                        </ButtonToolbar>
+                        </ButtonToolbar> */}
                     </Col>
 
                 </Row>
