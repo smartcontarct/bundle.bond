@@ -80,6 +80,25 @@ contract WeekNFT is ERC721Token {
         return _Week.id;
     }
 
+    function getWeekById(uint256 weekId)
+        public
+        view
+        returns (
+        uint256 id,
+        uint256 teamId,
+        address weekOwner,
+        bool exists,
+        string WeekUrl,
+        uint256 price,
+        uint256 WeekNo,
+        uint256 Year
+        )
+    {
+        Week storage week = _weekById[weekId];
+        //string storage teamURI = tokenURI(teamId);
+        return (week.id, week.teamId, week.weekOwner, week.exists, week.WeekUrl, week.price, week.WeekNo, week.Year);
+    }
+
     function assignNFTToTeam(
         address _teamContract,
         uint256 _teamTokenId,
