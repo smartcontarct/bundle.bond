@@ -16,7 +16,7 @@ required: [Node](https://nodejs.org/dist/latest-v12.x/) plus [Yarn](https://clas
 ```bash
 git clone https://github.com/smartcontarct/bundle.bond.git
 
-cd bundle.bund
+cd bundle.bond
 ```
 
 ```bash
@@ -36,7 +36,7 @@ yarn start
 > in a second terminal window:
 
 ```bash
-cd bundle.bund
+cd bundle.bond
 yarn deploy
 
 ```
