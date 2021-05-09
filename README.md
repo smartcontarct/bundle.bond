@@ -1,7 +1,6 @@
 # bundle.bond
 
-/TODO: 
-<div style="text-align:center"><img src="LOGO UPLOADED IN THE REPOSITORY" /></div>
+<div style="text-align:center"><img src="https://github.com/smartcontarct/bundle.bond/blob/master/bundle.bond.png" /></div>
 
 Create an online reservation that makes possible to reserve a team/time slot as NFT on blockchain.
 There are lists of teams on a market where customers can purchase NFTs posted by the Team.
