@@ -1,6 +1,5 @@
 import Web3 from "web3";
 import { BundleBond } from "../abi/BundleBond.js";
-import { BondleBondAddress } from "../contracts/BundleBond.address.js";
 
 const OPTIONS = {
   defaultBlock: "latest",
