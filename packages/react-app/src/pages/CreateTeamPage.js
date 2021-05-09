@@ -45,10 +45,10 @@ class CreateTeamPage extends Component {
         const tit = this.assetTitle.current.value;
         const des = this.assetDes.current.value;
         const loc = this.assetLocation.current.value;
-        const gasAmount = await bundlebondcontract.methods.addTeam(account,tit,this.state.ipfsHash).estimateGas({ from: account });
+        const gasAmount = await bundlebondcontract.methods.addTeam(account,tit,des,loc,this.state.ipfsHash).estimateGas({ from: account });
         console.log('gasAmount');
         console.log(gasAmount);
-        const result = await bundlebondcontract.methods.addTeam(account,tit,this.state.ipfsHash).send({
+        const result = await bundlebondcontract.methods.addTeam(account,tit,des,loc,this.state.ipfsHash).send({
             from: account,
             gasAmount,
         });

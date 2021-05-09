@@ -20,6 +20,8 @@ contract TeamNFT is ComposableTopDown {
         address teamOwner;
         string name;
         string TeamUrl;
+        string TeamDescription;
+        string TeamLocation;
         bool exists;
     }
 
@@ -27,6 +29,8 @@ contract TeamNFT is ComposableTopDown {
         uint256 _id,
         string memory _TeamUrl,
         string memory _name,
+        string memory _temDes,
+        string memory _teamLoc,
         address _teamOwner
     ) public returns (uint256) {
         totalTeams++;
@@ -36,6 +40,8 @@ contract TeamNFT is ComposableTopDown {
             teamOwner: _teamOwner,
             name: _name,
             TeamUrl: _TeamUrl,
+            TeamDescription: _temDes,
+            TeamLocation: _teamLoc,
             exists: true
         });
         _teamById[_id] = _Team;
@@ -45,10 +51,12 @@ contract TeamNFT is ComposableTopDown {
     function mintTeamToken(
         address teamOwner,
         string name,
+        string memory _temDes,
+        string memory _teamLoc,
         string metadata //isTeamOwner(teamOwner)
     ) public returns (uint256 _teamId) {
         uint256 teamId = mint(teamOwner, metadata);
-        _createTeam(teamId, metadata, name, teamOwner);
+        _createTeam(teamId, metadata, name, _temDes, _teamLoc, teamOwner);
         return teamId;
     }
 

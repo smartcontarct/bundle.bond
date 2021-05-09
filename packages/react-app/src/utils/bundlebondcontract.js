@@ -8,7 +8,7 @@ const OPTIONS = {
 }
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545", null, OPTIONS);
 
-const bundleBondAddress = '0x6d4F1e96A1d1806f20315FeCA94A8Da8EBb10306';//BondleBondAddress;
+const bundleBondAddress = '0xe901A2a12270fAdF1AfA9ec2Ce2751E7bCa30BEF';//BondleBondAddress;
 console.log('BundleBond');
 console.log(BundleBond);
 console.log('bundleBondAddress');

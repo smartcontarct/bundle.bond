@@ -3,11 +3,15 @@ export const BundleBond = [
     "constant": false,
     "inputs": [
       {
-        "name": "name",
+        "name": "_adminName",
         "type": "string"
+      },
+      {
+        "name": "_adminAddress",
+        "type": "address"
       }
     ],
-    "name": "AddCustomer",
+    "name": "addAdmin",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -29,6 +33,59 @@ export const BundleBond = [
     "outputs": [],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "teamOwner",
+        "type": "address"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "_temDes",
+        "type": "string"
+      },
+      {
+        "name": "_teamLoc",
+        "type": "string"
+      },
+      {
+        "name": "metadata",
+        "type": "string"
+      }
+    ],
+    "name": "addTeam",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_adminName",
+        "type": "string"
+      },
+      {
+        "name": "_adminAddress",
+        "type": "address"
+      }
+    ],
+    "name": "editAdminName",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -85,6 +142,25 @@ export const BundleBond = [
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_adminAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getAdminName",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
     "inputs": [
       {
@@ -101,6 +177,24 @@ export const BundleBond = [
       }
     ],
     "name": "placeBidOnWeekNFT",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "name": "_projectAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AddProjectToResume",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -128,6 +222,57 @@ export const BundleBond = [
     "constant": false,
     "inputs": [
       {
+        "name": "_teamOwnerName",
+        "type": "string"
+      },
+      {
+        "name": "_teamOwnerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "editTeamOwnerName",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "isTeamOwner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_teamOwnerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getTeamOwnerName",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
         "name": "weekTokenId",
         "type": "uint256"
       },
@@ -147,43 +292,159 @@ export const BundleBond = [
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [],
+    "name": "getTeamCount",
+    "outputs": [
+      {
+        "name": "teamCount",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
+    "inputs": [],
+    "name": "isAdmin",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
     "inputs": [
       {
-        "name": "_customerName",
+        "name": "weekId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getWeekById",
+    "outputs": [
+      {
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "name": "teamId",
+        "type": "uint256"
+      },
+      {
+        "name": "weekOwner",
+        "type": "address"
+      },
+      {
+        "name": "exists",
+        "type": "bool"
+      },
+      {
+        "name": "WeekUrl",
         "type": "string"
       },
       {
-        "name": "_customerAddress",
-        "type": "address"
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "name": "WeekNo",
+        "type": "uint256"
+      },
+      {
+        "name": "Year",
+        "type": "uint256"
       }
     ],
-    "name": "addCustomer",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": false,
     "inputs": [
       {
+        "name": "offerID",
+        "type": "uint256"
+      }
+    ],
+    "name": "acceptAnOffer",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "teamTokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "weekTokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "purchaseWeekOfTeam",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "teamId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTeamById",
+    "outputs": [
+      {
+        "name": "id",
+        "type": "uint256"
+      },
+      {
         "name": "teamOwner",
         "type": "address"
       },
       {
-        "name": "teamName",
+        "name": "name",
         "type": "string"
       },
       {
-        "name": "metadata",
+        "name": "TeamUrl",
         "type": "string"
+      },
+      {
+        "name": "exists",
+        "type": "bool"
       }
     ],
-    "name": "addTeam",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "weekTokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "makeAnOffer",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -203,20 +464,6 @@ export const BundleBond = [
       }
     ],
     "name": "sellWeekNFT",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "name",
-        "type": "string"
-      }
-    ],
-    "name": "CreateProject",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",

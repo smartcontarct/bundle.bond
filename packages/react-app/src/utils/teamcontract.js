@@ -8,7 +8,7 @@ const OPTIONS = {
 }
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545", null, OPTIONS);
 
-const TeamAddress = '0x357741ef5135481f948b3DA5Da3F57Deb3656536';//BondleBondAddress;
+const TeamAddress = '0xB8A1Dc81188Ae927A1C389DC1693e83F966207C7';//BondleBondAddress;
 
 const teamcontract = new web3.eth.Contract(TeamNFT, TeamAddress);
 
