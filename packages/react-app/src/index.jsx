@@ -1,30 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import "./index.css";
-import App from "./App";
-
-import { ThemeSwitcherProvider } from "react-css-theme-switcher";
-
-const themes = {
-  dark: `${process.env.PUBLIC_URL}/dark-theme.css`,
-  light: `${process.env.PUBLIC_URL}/light-theme.css`,
-};
-
-const prevTheme = window.localStorage.getItem("theme");
-
-let subgraphUri = "http://localhost:8000/subgraphs/name/scaffold-eth/your-contract"
-
-const client = new ApolloClient({
-  uri: subgraphUri,
-  cache: new InMemoryCache()
-});
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+//import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './Routes';
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <ThemeSwitcherProvider themeMap={themes} defaultTheme={prevTheme ? prevTheme : "light"}>
-      <App subgraphUri={subgraphUri}/>
-    </ThemeSwitcherProvider>
-  </ApolloProvider>,
-  document.getElementById("root"),
+  <Router>
+    <div className="App">
+      <Routes />
+    </div>
+  </Router>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  document.getElementById('root')
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+//reportWebVitals();

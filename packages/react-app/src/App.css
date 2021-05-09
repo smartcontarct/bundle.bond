@@ -57,3 +57,7 @@
 .card-header a {
   color: red;
 }
+.jumbotron {
+  background: #e0dfeb;
+  min-height: 25vh;
+}  
