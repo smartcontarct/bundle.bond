@@ -44,7 +44,10 @@ interface IWeekNFT {
     function mint721(
         address _teamContract,
         uint256 _teamTokenId,
-        address userAddress
+        address userAddress,
+        string metadata,
+        uint256 _WeekNo,
+        uint256 _Year
     ) public returns (uint256);
 
     function assignNFTToTeam(
@@ -230,8 +233,21 @@ contract BundleBond is RBAC {
         return TEAM.getTeamById(teamId);
     }
 
-    function addWeek(uint256 _teamTokenId, address teamOwnerAddress) {
-        WEEK.mint721(TeamContractAddress, _teamTokenId, teamOwnerAddress);
+    function addWeek(
+        uint256 _teamTokenId,
+        address userAddress,
+        string metadata,
+        uint256 _WeekNo,
+        uint256 _Year
+    ) public {
+        WEEK.mint721(
+            TeamContractAddress,
+            _teamTokenId,
+            userAddress,
+            metadata,
+            _WeekNo,
+            _Year
+        );
     }
 
     function getWeekById(uint256 weekId)
